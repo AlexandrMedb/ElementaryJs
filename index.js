@@ -69,18 +69,10 @@ function hw2() {
     else return a + b;
   };
 
-  const task4_1 = (a, b) => {
-    return a + b;
-  };
-  const task4_2 = (a, b) => {
-    return a - b;
-  };
-  const task4_3 = (a, b) => {
-    return a * b;
-  };
-  const task4_4 = (a, b) => {
-    return a / b;
-  };
+  const task4_1 = (a, b) => a + b;
+  const task4_2 = (a, b) => a - b;
+  const task4_3 = (a, b) => a * b;
+  const task4_4 = (a, b) => a / b;
 
   const task5 = (a, b, oper = "+") => {
     switch (oper) {

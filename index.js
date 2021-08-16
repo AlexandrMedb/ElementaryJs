@@ -179,4 +179,99 @@ function hw3() {
   };
   task6(20);
 }
-w3();
+// w3();
+
+function hw4() {
+  function task1(number) {
+    if (+number != +number) return;
+    if (number < 0 || number > 999) return;
+    if (number % 1 > 0) return;
+    this.units = number % 10;
+    this.tens = ((number - this.units) % 100) / 10;
+    this.hundreds = (number - (number % 100)) / 100;
+  }
+
+  let task = new task1(222);
+  // console.log(task);
+
+  //task1.1
+  function ProductEs5(name, price) {
+    this.name = name;
+    this.price = price;
+  }
+
+  ProductEs5.prototype.make25PercentDiscount = function () {
+    this.price *= 0.75;
+  };
+
+  class ProductEs6 {
+    constructor(name, price) {
+      this.name = name;
+      this.price = price;
+    }
+    make25PercentDiscount() {
+      this.price *= 0.75;
+    }
+  }
+
+  //task1.2
+  function PostEs5(author, text, date) {
+    this.author = author;
+    this.text = text;
+    this.date = date;
+  }
+
+  PostEs5.prototype.edit = function () {
+    this.text = text;
+  };
+
+  function AttachedPostEs5(author, text, date) {
+    PostEs5.call(this, author, text, date);
+    this.highlighter = false;
+  }
+
+  AttachedPostEs5.prototype = Object.create(PostEs5.prototype);
+  AttachedPostEs5.prototype.constructor = AttachedPostEs5;
+
+  AttachedPostEs5.prototype.makeTextHighlighted = function () {
+    this.highlighter = true;
+  };
+
+  class PostEs6 {
+    constructor(author, text, date) {
+      this.author = author;
+      this.text = text;
+      this.date = date;
+    }
+    edit(text) {
+      this.text = text;
+    }
+  }
+
+  class AttachedPostEs6 extends PostEs6 {
+    constructor(author, text, date) {
+      super(author, text, date);
+      this.highlighter = false;
+    }
+    makeTextHighlighted() {
+      this.highlighter = true;
+    }
+  }
+
+  const task3 = () => {
+    let Millioner = {
+      questions: [],
+      set addQustion(q) {
+        this.questions.push(q);
+      },
+      run() {
+        this.question.forEach((element) => {});
+      },
+    };
+
+    Millioner.addQustion = "asda";
+    console.log(Millioner);
+  };
+  task3();
+}
+hw4();

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img src="https://placeimg.com/100/100/animals" alt="" />
+    <img src="https://placeimg.com/100/100/arch" alt="" />
+    <img src="https://placeimg.com/100/100/people" alt="" />
+
+    <!-- Задание. 
+    1. Сохраните в переменную коллекцию с картинками.
+    2. Пробегитесь по этой коллекции с помощью цикла или forEach
+    и выведите каждую картинку в консоль. Выведите в консоль только
+	элементы коллекции, не нужно пытаться сделать, чтобы в консоли
+	появилось изображение. -->
+
+    <!-- я конечно прочитал задание но.. -->
+    <script>
+      function renderImage(url, scale = 0.5) {
+        let img = new Image();
+
+        img.onload = () => {
+          const style = `
+        display: block !important;
+        margin: 10px 0;
+        font-size: ${img.height * scale}px;
+        padding: ${Math.floor((img.height * scale) / 2)}px ${Math.floor(
+            (img.width * scale) / 2
+          )}px;
+        background: url(${url});
+        background-size: ${img.width * scale}px ${img.height * scale}px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      `;
+          console.log("%c%s", style, " ");
+        };
+
+        img.src = url;
+      }
+
+      let img = document
+        .querySelectorAll("img")
+        .forEach((item) => renderImage(item.src));
+    </script>
+  </body>
+</html>

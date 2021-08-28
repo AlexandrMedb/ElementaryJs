@@ -713,11 +713,23 @@ body {
 .cartList {
   background: white;
   position: absolute;
+  box-sizing: border-box;
   right: 10px;
-  width: 450px;
+  max-width: 320px;
   padding: 10px;
   display: none;
+  border-radius: 10px;
 }
+.cartList div {
+  margin-bottom: 20px;
+  border-bottom: 1px solid black;
+}
+
 .show {
   display: block;
+}
+
+@media (max-width: 767px) {
+  .cartList {
+  }
 }
